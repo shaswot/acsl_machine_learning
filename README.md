@@ -16,9 +16,9 @@ docker run \
 	--name <whimsical_container_name> \
 	-p <host_machine_jupyter_lab_port>:8888 \ 	# port forwarding: <Host>:<Container>
 	-p <host_machine_tensorboard_port>:6006 \	# port forwarding: <Host>:<Container>
-	--gpus all \                 			# support all gpus (docker > 19.03)
+	--gpus all \                 			# support all gpus (docker > 19.03). remove for machines without gpus
 	-v /local_vol:/docker_vol \  			# volume: mapping local folder to container
-	-e JUPYTER_TOKEN=passwd \    			# Jupyter password: passwd
+	-e JUPYTER_TOKEN=<passwd> \    			# Jupyter password: passwd
    	<some_image_name:tag> 				# image name
 ```
 ## Run your container using the script file

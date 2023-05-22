@@ -66,15 +66,22 @@ RUN pip install \
 
 RUN pip install gymnasium[all]
 
+# Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
+ENV TINI_VERSION v0.6.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
+EXPOSE 8888
+EXPOSE 6006
+
 # start jupyter lab
 # define the port number(s) the container should expose
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--port=6006", "--allow-root", "--no-browser"]
-EXPOSE 8888
-EXPOSE 6006
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
 
 # Change workdir to root so that Jupyter Lab can access the /stash folder
 # /stash folder stores large dumpfiles that can be accessed from the host computer
-WORKDIR /
+# WORKDIR /
 
