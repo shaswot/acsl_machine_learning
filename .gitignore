@@ -1,0 +1,54 @@
+# Python
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Jupyter Notebook
+**/.ipynb_checkpoints
+**/.idea
+
+# Tensorboard Logs
+**/runs
+
+# Saved Models and Seeds
+**/weights
+**/models
+*.pt
+*.dat
+
+# Logfiles
+**/pylogfiles
+**/pdfs
+**/logging
+**/logfiles
+
+# Outputs
+**/results
+**/figures
+
+# Archives
+**/archive
+**/experiment_notebooks
+**/*.old
+
+# Scratchpads
+**/*scratch*
+
+# File Duplicates
+**/*-Copy*
+
+# Numpy Pickles
+**/*.npy
+
+# Wisteria/OBCX logs
+**/*.out
+**/*.job
+**/*.d00*
+**/*.sh.o*
+**/wisteria_scripts
+
+# Keras
+.keras/
+
