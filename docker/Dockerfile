@@ -53,17 +53,20 @@ RUN pip install \
         ipynbname \
         gitpython \
 	tqdm \
-	autopep8 \
-	gymnasium[all] \
+	autopep8 
+	
+RUN pip install \
 	torch==2.0.1+cu118 \
 	torchaudio==2.0.2+cu118 \
-	torchvision==0.15.2+cu118 \
-        --index-url https://download.pytorch.org/whl/cu118 \
+	torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118 
+
+RUN pip install \
         nvidia-cudnn-cu11==8.6.0.163 \
-	tensorflow==2.12.0
+	tensorflow==2.12.0 
+
+RUN pip install gymnasium[all]
 
 # start jupyter lab
-
 # define the port number(s) the container should expose
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
