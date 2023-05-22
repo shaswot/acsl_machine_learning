@@ -38,7 +38,7 @@ torchvision==0.15.2+cu118
 ```
 
 > Jupyter Lab is available
-
+> `gymanisum[all]` is available
 > Does not use conda environment or venv
 
 
