@@ -79,7 +79,7 @@ EXPOSE 6006
 # define the port number(s) the container should expose
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
 
 # Change workdir to root so that Jupyter Lab can access the /stash folder
 # /stash folder stores large dumpfiles that can be accessed from the host computer
