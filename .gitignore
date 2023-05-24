@@ -24,6 +24,9 @@
 **/logging
 **/logfiles
 
+# Data
+**/data
+
 # Outputs
 **/results
 **/figures
