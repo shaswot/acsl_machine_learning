@@ -77,8 +77,8 @@ EXPOSE 8888
 EXPOSE 6006
 
 # add jupyterlab settings
-RUN mkdir -p /root/.jupyter/lab
-COPY ./jupyterlab-settings/user-settings /root/.jupyter/lab/
+#RUN mkdir -p /root/.jupyter/lab
+#COPY ./jupyterlab-settings/user-settings /root/.jupyter/lab/
 
 # start jupyter lab
 # define the port number(s) the container should expose
