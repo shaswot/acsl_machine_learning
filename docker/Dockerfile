@@ -28,14 +28,10 @@ RUN apt-get -yqq install \
 # alias python='python3'
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-# set a directory for the repos (working directory)
-RUN mkdir -p /repos/
-
 # folder to share files with host machine
 # /stash folder stores large dumpfiles that can be accessed from the host computer
 RUN mkdir -p /stash
 VOLUME /stash
-
 
 # build with some basic python packages
 RUN pip install --upgrade pip
@@ -52,8 +48,8 @@ RUN pip install \
         autopep8 \
         ipynbname \
         gitpython \
-	tqdm \
-	autopep8 
+    	tqdm \
+    	autopep8 
 	
 RUN pip install \
 	torch==2.0.1+cu118 \
@@ -64,7 +60,9 @@ RUN pip install \
         nvidia-cudnn-cu11==8.6.0.163 \
 	tensorflow==2.12.0 
 
-RUN pip install gymnasium[all]
+# Install other packages
+COPY ./docker/requirements.txt /tmp/
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
@@ -80,8 +78,3 @@ EXPOSE 6006
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
-
-# Change workdir to root so that Jupyter Lab can access the /stash folder
-# /stash folder stores large dumpfiles that can be accessed from the host computer
-# WORKDIR /
-
