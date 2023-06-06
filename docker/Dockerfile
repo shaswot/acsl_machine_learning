@@ -7,6 +7,9 @@ ENV SHELL=/bin/bash
 # Create a working directory
 WORKDIR /repos/
 
+# copy repository to the repo folder
+COPY . /repos/acsl_machine_learning
+
 # Build with some basic utilities
 RUN apt-get -yqq update --fix-missing
 RUN apt-get -yqq install \
