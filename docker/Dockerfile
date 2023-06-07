@@ -54,18 +54,18 @@ RUN pip install \
     	tqdm \
     	autopep8 
 	
-RUN pip install \
-	torch==2.0.1+cu118 \
-	torchaudio==2.0.2+cu118 \
-	torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118 
+#RUN pip install \
+#	torch==2.0.1+cu118 \
+#	torchaudio==2.0.2+cu118 \
+#	torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118 
 
-RUN pip install \
-        nvidia-cudnn-cu11==8.6.0.163 \
-	tensorflow==2.12.0 
+#RUN pip install \
+#        nvidia-cudnn-cu11==8.6.0.163 \
+#	tensorflow==2.12.0 
 
 # Install other packages
-COPY ./docker/requirements.txt /tmp/
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+#COPY ./docker/requirements.txt /tmp/
+#RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
@@ -79,6 +79,7 @@ EXPOSE 6006
 # add jupyterlab settings
 #RUN mkdir -p /root/.jupyter/lab
 #COPY ./jupyterlab-settings/user-settings /root/.jupyter/lab/
+
 
 # start jupyter lab
 # define the port number(s) the container should expose

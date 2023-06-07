@@ -3,7 +3,7 @@ gymnasium[all]
 autorom[accept-rom-license]
 
 # latest stable-baselines
-stable-baselines3[extra]
+stable_baselines3[extra]>=2.0.0a9
 
 # latest rl_zoo
 rl_zoo3
