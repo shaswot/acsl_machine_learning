@@ -1,1 +1,9 @@
+# gymnasium with atari ROM support
 gymnasium[all]
+autorom[accept-rom-license]
+
+# latest stable-baselines
+stable-baselines3[extra]
+
+# latest rl_zoo
+rl_zoo3
