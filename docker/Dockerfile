@@ -75,14 +75,10 @@ EXPOSE 6006
 
 #run jupyter lab settings
 
-RUN chmod +x /repos/acsl_machine_learning/jupyter-settings.sh
-RUN /repos/acsl_machine_learning/jupyter-settings.sh
-
-
-# add jupyterlab settings
-#RUN mkdir -p /root/.jupyter/lab
-#COPY ./jupyterlab-settings/user-settings /root/.jupyter/lab/
-
+COPY ./jupyter_files/overrides.json /tmp/
+COPY ./jupyter_files/jupyter-settings.sh /tmp/
+#RUN chmod +x ./jupyter_files/jupyter-settings.sh
+RUN bash /tmp/jupyter-settings.sh
 
 # start jupyter lab
 # define the port number(s) the container should expose
