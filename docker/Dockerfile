@@ -58,12 +58,12 @@ RUN pip install \
 #	torch==2.0.1+cu118 \
 #	torchaudio==2.0.2+cu118 \
 #	torchvision==0.15.2+cu118 --index-url https://download.pytorch.org/whl/cu118 
-
+#
 #RUN pip install \
 #        nvidia-cudnn-cu11==8.6.0.163 \
 #	tensorflow==2.12.0 
 
-# Install other packages
+## Install other packages
 #COPY ./docker/requirements.txt /tmp/
 #RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
@@ -85,4 +85,5 @@ EXPOSE 6006
 # define the port number(s) the container should expose
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
+#CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
+CMD ["bash"]
