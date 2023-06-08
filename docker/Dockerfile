@@ -1,9 +1,6 @@
 FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 MAINTAINER shaswot <shaswot@acsl.ics.keio.ac.jp>
 
-# Set bash as the default shell
-ENV SHELL=/bin/bash
-
 # Create a working directory
 WORKDIR /repos/
 
@@ -75,6 +72,12 @@ ENTRYPOINT ["/usr/bin/tini", "--"]
 
 EXPOSE 8888
 EXPOSE 6006
+
+#run jupyter lab settings
+
+RUN chmod +x /repos/acsl_machine_learning/jupyter-settings.sh
+RUN /repos/acsl_machine_learning/jupyter-settings.sh
+
 
 # add jupyterlab settings
 #RUN mkdir -p /root/.jupyter/lab
