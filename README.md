@@ -38,6 +38,8 @@ torchvision==0.15.2+cu118
 ```
 
 > Jupyter Lab is available
+>> JupyterLab is initalized with some custom settings such as custom keyboard shortcuts, code folding in notebook etc. as specified in the `jupyter_files/overrides.json` file.
+>> `jupyter_files/jupyter-setting.sh` is a script that copies the `overrides.json` to the appropriate location in the container.
 
 > `gymanisum[all]` is listed inrequirements.txt
 
