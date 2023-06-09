@@ -77,6 +77,9 @@ EXPOSE 8888
 EXPOSE 6006
 
 # add jupyterlab settings
+COPY ./jupyter_files/overrides.json /tmp/
+COPY ./jupyter_files/jupyter-settings.sh /tmp/
+RUN bash /tmp/jupyter-settings.sh
 
 # start jupyter lab
 # define the port number(s) the container should expose
