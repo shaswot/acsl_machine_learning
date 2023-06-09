@@ -1,0 +1,135 @@
+
+{   
+	"@jupyterlab/completer-extension:manager":
+	{
+		"autoCompletion": true
+	},
+
+	"@jupyterlab/notebook-extension:tracker": 
+	{
+		"autoStartDefaultKernel": false,
+
+		"codeCellConfig": { 
+			"autoClosingBrackets": true,
+			"lineWrap": true,
+			"lineNumbers": true,
+			"matchBrackets": true,
+			"tabSize": 4,
+			"wordWrapColumn": 80,
+			"codeFolding": true,
+			"showTrailingSpace": false
+		}
+	},
+	"@jupyterlab/shortcuts-extension:shortcuts":
+	{
+		 "shortcuts": [
+           {
+              "command": "runmenu:restart-and-run-all",
+              "keys": [
+
+                "Shift Backspace"
+              ],
+              "selector": "[data-jp-code-runner]",
+              "title": "Restart Kernel and Run All",
+              "category": "Run Menu"
+            },
+            {
+                "command": "notebook:hide-cell-outputs",
+                "keys": [
+                  "O"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },    
+            {
+                "command": "notebook:show-cell-outputs",
+                "keys": [
+                  "O", 
+                  "O"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:show-cell-code",
+                "keys": [
+                  "E",
+                  "E"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:hide-cell-code",
+                "keys": [
+                  "E"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:hide-all-cell-outputs",
+                "keys": [
+                  "Shift Alt O"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:show-all-cell-outputs",
+                "keys": [
+                  "Shift O"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:show-all-cell-code",
+                "keys": [
+                  "Shift E"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "notebook:hide-all-cell-code",
+                "keys": [
+                  "Shift Alt E"
+                ],
+                "selector": ".jp-Notebook:focus"
+            },
+            {
+                "command": "jupyterlab_code_formatter:black",
+                "keys": [
+                    "Ctrl K",
+                    "Ctrl M"
+                ],
+                "selector": ".jp-Notebook.jp-mod-editMode"
+            }
+        ]
+	},
+	"@jupyterlab/terminal-extension:plugin":
+	{
+		"scrollback": 100000
+	},
+
+	"@jupyterlab/fileeditor-extension:plugin":
+	{
+		"editorConfig": {
+			"autoClosingBrackets": true,
+			"codeFolding": true,
+			"cursorBlinkRate": 530,
+			"fontFamily": null,
+			"fontSize": null,
+			"insertSpaces": true,
+			"lineHeight": null,
+			"lineNumbers": true,
+			"lineWrap": "on",
+			"matchBrackets": true,
+			"readOnly": false,
+			"rulers": [],
+			"showTrailingSpace": false,
+			"tabSize": 4,
+			"wordWrapColumn": 80
+		}
+	},
+
+	"@jupyterlab/apputils-extension:themes":
+	{
+		"theme": "JupyterLab Dark"
+	}
+
+}
