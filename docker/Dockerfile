@@ -17,11 +17,11 @@ RUN apt-get -yqq install \
         screen \
         htop \
         wget \
-        net-tools \
-        xvfb \
-        ffmpeg \
-        freeglut3-dev \
-        swig \
+        #net-tools \
+        #xvfb \
+        #ffmpeg \
+        #freeglut3-dev \
+        #swig \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
@@ -43,9 +43,8 @@ RUN pip install \
         matplotlib \
         seaborn \
         ipywidgets \
-        scikit-learn \
-        scikit-image \
-        autopep8 \
+        #scikit-learn \
+        #scikit-image \
         ipynbname \
         gitpython \
     	tqdm \
@@ -74,10 +73,8 @@ EXPOSE 8888
 EXPOSE 6006
 
 #run jupyter lab settings
-
 COPY ./jupyter_files/overrides.json /tmp/
 COPY ./jupyter_files/jupyter-settings.sh /tmp/
-#RUN chmod +x ./jupyter_files/jupyter-settings.sh
 RUN bash /tmp/jupyter-settings.sh
 
 # start jupyter lab
@@ -85,4 +82,3 @@ RUN bash /tmp/jupyter-settings.sh
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
-#CMD ["bash"]
