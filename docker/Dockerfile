@@ -84,5 +84,5 @@ RUN bash /tmp/jupyter-settings.sh
 # define the port number(s) the container should expose
 # All running containers expose 8888 and 6006
 # They are redirected to other ports using docker -p <machine_port>:8888
-#CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
-CMD ["bash"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--notebook-dir=/"]
+#CMD ["bash"]
