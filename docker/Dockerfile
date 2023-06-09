@@ -39,7 +39,7 @@ VOLUME /stash
 # build with some basic python packages
 RUN pip install --upgrade pip
 RUN pip install \
-        numpy \
+        numpy=1.23.5 \
         jupyterlab \
         pandas \
         scipy \
