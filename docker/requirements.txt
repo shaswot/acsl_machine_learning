@@ -1,6 +1,7 @@
 # gymnasium with atari ROM support
 gymnasium[all]
 autorom[accept-rom-license]
+pyvirtualdisplay
 
 # latest stable-baselines
 stable_baselines3[extra]>=2.0.0a9
