@@ -1,9 +1,6 @@
 FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
 MAINTAINER shaswot <shaswot@acsl.ics.keio.ac.jp>
 
-# Set bash as the default shell
-ENV SHELL=/bin/bash
-
 # Create a working directory
 WORKDIR /repos/
 
@@ -39,7 +36,7 @@ VOLUME /stash
 # build with some basic python packages
 RUN pip install --upgrade pip
 RUN pip install \
-        numpy=1.23.5 \
+        numpy==1.23.5 \
         jupyterlab \
         pandas \
         scipy \
