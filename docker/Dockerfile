@@ -1,6 +1,7 @@
 FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
-MAINTAINER shaswot <shaswot@acsl.ics.keio.ac.jp>
-
+LABEL "author"="shaswot" 
+LABEL "author.email"="shaswot@acsl.ics.keio.ac.jp"
+LABEL "description"="Docker template image for ML with both pytorch==2.0.1 and tensorflow==2.12.0"
 # Set bash as the default shell
 ENV SHELL=/bin/bash
 
