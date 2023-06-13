@@ -12,7 +12,7 @@ docker build -f ./docker/Dockerfile -t <some_image_name:some_tag> .
 ```
 docker run \
  	--rm \                       			# remove the container when it exits
-	--dit \                       			# (detached, interactive, tty)
+	-dit \                       			# (detached, interactive, tty)
 	--name <whimsical_container_name> \
 	-p <host_machine_jupyter_lab_port>:8888 \ 	# port forwarding: <Host>:<Container>
 	-p <host_machine_tensorboard_port>:6006 \	# port forwarding: <Host>:<Container>
