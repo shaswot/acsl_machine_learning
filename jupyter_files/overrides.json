@@ -23,7 +23,7 @@
 
 	"@jupyterlab/shortcuts-extension:shortcuts":
 	{
-	"shortcuts": [
+		 "shortcuts": [
            {
               "command": "runmenu:restart-and-run-all",
               "keys": [
@@ -102,7 +102,7 @@
             }
         ]
 	},
-	
+
 	"@jupyterlab/terminal-extension:plugin":
 	{
 		"scrollback": 100000
