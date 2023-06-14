@@ -1,4 +1,3 @@
-
 {   
 	"@jupyterlab/completer-extension:manager":
 	{
@@ -20,6 +19,7 @@
 			"showTrailingSpace": false
 		}
 	},
+
 	"@jupyterlab/shortcuts-extension:shortcuts":
 	{
 		 "shortcuts": [
@@ -101,6 +101,7 @@
             }
         ]
 	},
+
 	"@jupyterlab/terminal-extension:plugin":
 	{
 		"scrollback": 100000
