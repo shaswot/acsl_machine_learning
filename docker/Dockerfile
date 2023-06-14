@@ -47,6 +47,7 @@ RUN pip install \
         matplotlib \
         seaborn \
         ipywidgets \
+	ipyplot \
         scikit-learn \
         scikit-image \
         autopep8 \
